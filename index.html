@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CredLock Tech Support · Portal Hub</title>
+  <meta name="description" content="CredLock Technical Support System — permanent portal entry from GitHub" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#0b1f3a; --accent:#1d4ed8; --muted:#64748b; --line:rgba(15,23,42,.08); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Inter,system-ui,sans-serif; background:linear-gradient(165deg,#0b1f3a 0%,#132f54 45%,#1e3a5f 100%); min-height:100vh; color:#0f172a; }
+    .shell { max-width:1100px; margin:0 auto; padding:28px 20px 60px; }
+    .top { display:flex; align-items:center; justify-content:space-between; gap:16px; color:#e2e8f0; margin-bottom:28px; flex-wrap:wrap; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#3b82f6,#1d4ed8); display:grid; place-items:center; font-weight:800; color:#fff; box-shadow:0 8px 24px rgba(29,78,216,.35); }
+    .brand h1 { font-size:18px; font-weight:700; }
+    .brand p { font-size:12px; color:#94a3b8; }
+    .pill { font-size:11px; font-weight:600; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); color:#cbd5e1; }
+    .hero { background:#fff; border-radius:24px; padding:32px 28px; box-shadow:0 30px 80px rgba(0,0,0,.28); margin-bottom:20px; }
+    .hero h2 { font-size:28px; font-weight:800; letter-spacing:-.03em; color:var(--navy); margin-bottom:8px; }
+    .lead { color:var(--muted); font-size:15px; line-height:1.55; max-width:640px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px; font-weight:600; font-size:14px; text-decoration:none; border:none; cursor:pointer; }
+    .btn-primary { background:var(--accent); color:#fff; }
+    .btn-primary:hover { background:#1e40af; }
+    .btn-ghost { background:#f1f5f9; color:var(--navy); border:1px solid var(--line); }
+    .btn-ok { background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:18px; }
+    .card { background:#f8fafc; border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .card h3 { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+    .card p { font-size:12px; color:var(--muted); line-height:1.45; }
+    .cfg { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:18px; padding:18px; color:#e2e8f0; margin-top:18px; }
+    .cfg label { display:block; font-size:12px; color:#94a3b8; margin-bottom:6px; }
+    .cfg input { width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.15); background:rgba(0,0,0,.25); color:#f8fafc; font-size:13px; font-family:ui-monospace,monospace; }
+    .cfg .row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .status { display:inline-flex; align-items:center; gap:6px; font-size:12px; margin-top:12px; color:#86efac; }
+    .status .dot { width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.2); }
+    footer { margin-top:28px; text-align:center; color:#94a3b8; font-size:12px; }
+    footer a { color:#93c5fd; }
+    .preview { margin-top:16px; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#0f172a; color:#e2e8f0; }
+    .preview-bar { display:flex; gap:6px; padding:10px 14px; background:#1e293b; align-items:center; }
+    .preview-bar span { width:10px; height:10px; border-radius:50%; background:#475569; }
+    .preview-bar span:nth-child(1){background:#ef4444} .preview-bar span:nth-child(2){background:#eab308} .preview-bar span:nth-child(3){background:#22c55e}
+    .preview-body { padding:20px; display:grid; grid-template-columns:180px 1fr; gap:16px; min-height:180px; }
+    .nav-mock { background:#132f54; border-radius:12px; padding:12px; font-size:11px; }
+    .nav-mock div { padding:8px 10px; border-radius:8px; margin-bottom:4px; color:#cbd5e1; }
+    .nav-mock div.active { background:rgba(59,130,246,.25); color:#fff; font-weight:600; }
+    .kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .kpi { background:rgba(255,255,255,.06); border-radius:10px; padding:12px; text-align:center; }
+    .kpi b { display:block; font-size:20px; color:#60a5fa; }
+    .kpi small { color:#94a3b8; font-size:10px; }
+    @media (max-width:720px){ .preview-body{grid-template-columns:1fr} .hero h2{font-size:22px} }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="top">
+      <div class="brand">
+        <div class="logo">CL</div>
+        <div>
+          <h1>CredLock Tech Support</h1>
+          <p>KAVRO-ENGINE · Portal Hub · v14.6</p>
+        </div>
+      </div>
+      <span class="pill">GitHub Pages entry · permanent launcher</span>
+    </div>
+    <div class="hero">
+      <h2>Open the live support portal</h2>
+      <p class="lead">This is your <strong>custom permanent link</strong> from GitHub to the CredLock Technical Support System. The full app runs on Google Apps Script. Save your deployed <code>/exec</code> URL once below.</p>
+      <div class="actions">
+        <a class="btn btn-primary" id="openPortal" href="https://support.credlockng.com" target="_blank" rel="noopener">Open live portal →</a>
+        <a class="btn btn-ok" id="openChat" href="https://support.credlockng.com?page=chat" target="_blank" rel="noopener">Public live chat</a>
+        <a class="btn btn-ghost" href="https://github.com/techsupportint-dev/KAVRO-ENGINE" target="_blank" rel="noopener">View source</a>
+        <a class="btn btn-ghost" href="https://www.credlockng.com" target="_blank" rel="noopener">credlockng.com</a>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Tickets & devices</h3><p>KAVRO_ISSUES, BNPL import, device validation, SLA.</p></div>
+        <div class="card"><h3>Live Chat</h3><p>WhatsApp-style messaging · auto-refresh on chat only.</p></div>
+        <div class="card"><h3>Admin control</h3><p>Roles, audit, auto-configure, reports.</p></div>
+        <div class="card"><h3>Stable URL</h3><p>Always Edit → New version on the same deployment.</p></div>
+      </div>
+      <div class="preview">
+        <div class="preview-bar"><span></span><span></span><span></span><span style="width:auto;background:transparent;color:#94a3b8;font-size:11px;margin-left:8px">UI preview</span></div>
+        <div class="preview-body">
+          <div class="nav-mock">
+            <div class="active">Overview</div><div>Tickets</div><div>Live Chat</div><div>Devices</div><div>Reports</div><div>Admin</div>
+          </div>
+          <div>
+            <div class="kpis">
+              <div class="kpi"><b>—</b><small>Open tickets</small></div>
+              <div class="kpi"><b>—</b><small>Chat unread</small></div>
+              <div class="kpi"><b>14.6</b><small>Version</small></div>
+            </div>
+            <p style="margin-top:14px;font-size:12px;color:#94a3b8;line-height:1.5">Navy + white interface · cards · charts · live agent alerts. Full UI loads from your Apps Script deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cfg">
+      <label for="portalUrl">Apps Script web app URL (.../exec)</label>
+      <input id="portalUrl" type="url" placeholder="https://script.google.com/macros/s/XXXX/exec" />
+      <label for="brandUrl" style="margin-top:12px">Brand domain (optional)</label>
+      <input id="brandUrl" type="url" placeholder="https://support.credlockng.com" />
+      <div class="row">
+        <button class="btn btn-primary" type="button" onclick="saveUrls()">Save & use these links</button>
+        <button class="btn btn-ghost" type="button" onclick="useDefaults()">Reset defaults</button>
+      </div>
+      <div class="status"><span class="dot"></span> <span id="statusText">Ready — set your /exec URL</span></div>
+    </div>
+    <footer>Source · <a href="https://github.com/techsupportint-dev/KAVRO-ENGINE">techsupportint-dev/KAVRO-ENGINE</a> · Drive builds in README</footer>
+  </div>
+  <script>
+    (function () {
+      var DEFAULT_BRAND = 'https://support.credlockng.com';
+      function $(id) { return document.getElementById(id); }
+      function applyLinks() {
+        var portal = ($('portalUrl').value || '').trim();
+        var brand = ($('brandUrl').value || '').trim();
+        var live = brand || portal || DEFAULT_BRAND;
+        var chat = live + (live.indexOf('?') >= 0 ? '&' : '?') + 'page=chat';
+        $('openPortal').href = live;
+        $('openChat').href = chat;
+        $('statusText').textContent = 'Portal target: ' + live;
+      }
+      window.saveUrls = function () {
+        var portal = ($('portalUrl').value || '').trim();
+        var brand = ($('brandUrl').value || '').trim();
+        if (portal) localStorage.setItem('tss_portal_exec', portal);
+        if (brand) localStorage.setItem('tss_portal_brand', brand);
+        else localStorage.removeItem('tss_portal_brand');
+        applyLinks();
+        $('statusText').textContent = 'Saved. Open live portal uses your URL.';
+      };
+      window.useDefaults = function () {
+        $('portalUrl').value = '';
+        $('brandUrl').value = DEFAULT_BRAND;
+        localStorage.removeItem('tss_portal_exec');
+        localStorage.setItem('tss_portal_brand', DEFAULT_BRAND);
+        applyLinks();
+      };
+      $('portalUrl').value = localStorage.getItem('tss_portal_exec') || '';
+      $('brandUrl').value = localStorage.getItem('tss_portal_brand') || DEFAULT_BRAND;
+      applyLinks();
+    })();
+  </script>
+</body>
+</html>
