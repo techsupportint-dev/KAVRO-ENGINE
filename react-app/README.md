@@ -1,32 +1,34 @@
-# CredLock Tech Support — React + TypeScript
+# CredLock Tech Support — React + TypeScript (v14.7)
 
-Modern front-end for data structure, layout, and charts. Bridges to Google Apps Script.
+Bound to spreadsheet `1Xkg76BduW4xGPpU__GK0hMBxU3hQqf2Kk1BIPbBMigA` (tab **KAVRO_ISSUES**).
 
-## Stack
+## Windows
 
-- React 18 + TypeScript + Vite
-- React Router layout
-- Recharts dashboard
-- Typed domain models (`src/types/helpdesk.ts`)
-- GAS API bridge (`src/services/gasApi.ts`)
-- Navy / white design system
-
-## Run
-
-```bash
-cd react-app
+```bat
+cd C:\Users\April\source\repos\techsupportint-dev\KAVRO-ENGINE\react-app
+git pull
 npm install
-cp .env.example .env
+copy .env.example .env
+notepad .env
 npm run dev
 ```
+
+Open http://localhost:5173
+
+## .env
 
 ```
 VITE_GAS_EXEC_URL=https://script.google.com/macros/s/XXXX/exec
 VITE_USE_MOCK=true
 ```
 
-## Pages
+## Features
 
-Dashboard · Tickets · Live Chat (12s auto-refresh) · Devices · Analytics · Admin · Settings
+- Auth (login / session / logout)
+- Dashboard KPIs + charts
+- Tickets list + detail status actions
+- Devices grid
+- Live Chat (12s refresh)
+- Settings: sheet + script binding status
 
-Full zip: see Drive release `credlock-react-ts-v14.6.1.zip` linked from root README.
+Full source zip on Drive when needed; pull this repo then merge local `src/` updates.
