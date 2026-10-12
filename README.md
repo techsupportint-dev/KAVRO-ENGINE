@@ -1,36 +1,42 @@
 # KAVRO-ENGINE · CredLock Tech Support System
 
-Google Apps Script web app for CredLock technical support operations.
+**Version:** 14.5.3  
+**Repo:** https://github.com/techsupportint-dev/KAVRO-ENGINE
 
-## Core files (Apps Script)
+## Live sources (Apps Script)
 
-| File | Purpose |
-|------|---------|
-| `Code.gs` | Backend API, sheets, auth, chat, WhatsApp, reports |
-| `Portal.html` | Main staff portal UI |
-| `PublicChat.html` | Public / guest live chat page |
+Full production files are in Google Drive (latest from the build workspace). Paste into the Apps Script project:
 
-## Deploy
+| File | Drive |
+|------|-------|
+| `Code.gs` (v14.5.3) | https://drive.google.com/file/d/1FtC2sgWZnoirgm6x3IlfGx-Rszt_r3zp/view |
+| `Portal.html` (v14.5.3) | https://drive.google.com/file/d/1MEUSIeSMTmUJsufNOTypkuIOm--z4Hc0/view |
+| `PublicChat.html` | https://drive.google.com/file/d/1_yaLMpkhSEdHwcDQ6zINoXrLQo2QJPj5/view |
 
-1. Create a Google Apps Script project bound to your spreadsheet (or standalone with Spreadsheet ID in Settings).
-2. Paste `Code.gs` and add HTML files `Portal` and `PublicChat`.
-3. Deploy as **Web app** → Execute as **Me** → Who has access **Anyone** (for webhooks/chat).
-4. Use **Manage deployments → Edit → New version** so the `/exec` URL stays permanent.
-5. Point `https://support.credlockng.com` (or your brand domain) at that `/exec` URL.
+## This repository
 
-## Features (v14.5.3)
+- `README.md` — overview
+- `docs/DEPLOY.md` — deploy steps
+- `docs/CONNECTIONS.md` — keep Sheets, Drive, Gmail, WhatsApp, permanent URL connected
+- `apps-script/PublicChat.html` — public chat entry
+- `apps-script/unpack.py` — reconstruct from packed segments when present
+- `apps-script/VERSION` — `14.5.3`
 
-- Ticketing, device validation, SLA, admin settings
-- Live chat (WhatsApp-style) + WhatsApp Cloud API integration
-- Sign-in / register / PIN reset, roles, audit logs
-- Agent live dashboard, auto-refresh, stream filters (Incoming vs Kavro)
-- Missing-sheet repair, permanent URL helpers
+## Deploy (keep one permanent URL)
 
-## Connections
+1. Apps Script → paste Code.gs + Portal + PublicChat  
+2. Run `repairMissingSheets`  
+3. **Deploy → Manage deployments → Edit → New version** (same `/exec` URL)  
+4. Brand domain `https://support.credlockng.com` → that `/exec` URL  
 
-- Google Sheets (data)
-- Google Drive (attachments/reports)
-- Gmail (notifications / reset codes)
-- Meta WhatsApp Cloud API (optional)
+## Connections to keep active
 
-Keep one deployment URL active; do not create a new deployment for every update.
+| Connection | Purpose |
+|------------|---------|
+| Google Sheets | Tickets, users, chat, audit |
+| Google Drive | Attachments & reports |
+| Gmail | Reset PIN + notifications |
+| WhatsApp Cloud API | Optional inbound/outbound |
+| GitHub | Source control (this repo) |
+
+Do **not** create a new web-app deployment for each update — always **Edit → New version**.
