@@ -1,44 +1,35 @@
 # KAVRO-ENGINE · CredLock Tech Support System
 
-**Version:** 14.6.0  
+**Version:** 14.6.1  
 **Repo:** https://github.com/techsupportint-dev/KAVRO-ENGINE  
 
 ## Custom portal link (GitHub Pages)
 
-Enable **Settings → Pages → Deploy from branch `main` / root** (or allow the Pages workflow).
-
 ### https://techsupportint-dev.github.io/KAVRO-ENGINE/
 
-Use that URL as your public **portal hub**. Enter your Apps Script `/exec` URL once on the page — it opens the live system.
+Enable **Settings → Pages → Deploy from branch `main` / root** if the page is not live yet.
 
-Brand domain (point to the same `/exec`):
+Brand domain: **https://support.credlockng.com** (point to your Apps Script `/exec`).
 
-**https://support.credlockng.com**
-
-## Live Apps Script sources (paste into project)
+## Latest Apps Script sources (paste into project)
 
 | File | Drive |
 |------|-------|
-| Code.gs v14.6 | https://drive.google.com/file/d/1o8ipobUzNEkERdJdMPtGVOQb8BE4-nQz/view |
-| Portal.html v14.6 | https://drive.google.com/file/d/1e9kzdk76Zzu3Os-J6yAdNRtfiKB7CACi/view |
+| **Code.gs v14.6.1** | https://drive.google.com/file/d/1PWqxpozYaX8yHddVo1RMfyu3w7zoh5_G/view |
+| **Portal.html v14.6.1** | https://drive.google.com/file/d/133zmI4eFTaU63Y8u51JROeSAo1Y2F0Dy/view |
 
-## Deploy (permanent URL)
+## Deploy (keep permanent URL)
 
-1. Paste Code.gs + Portal (+ PublicChat) into Apps Script  
-2. Run `autoConfigureSystem`  
-3. **Manage deployments → Edit → New version** (keep the same `/exec` link)  
-4. Save that `/exec` on the GitHub Pages hub  
+1. Open Apps Script → replace `Code.gs` and HTML file `Portal` with the files above  
+2. Run `autoConfigureSystem` (optional)  
+3. **Deploy → Manage deployments → Edit → New version**  
+4. Hard-refresh the portal (Ctrl+Shift+R)  
+5. Save the same `/exec` URL on the GitHub hub page  
 
-## Features (14.6)
+## Features
 
 - Ticketing, BNPL recovery import → KAVRO_ISSUES  
 - Live Chat auto-refresh only (not Records)  
 - Admin auto-configure, delete NEW_ISSUES  
-- Roles, audit, WhatsApp Cloud API hooks  
-- Navy / white professional UI  
-
-## Structure
-
-- `index.html` — GitHub Pages portal hub  
-- `docs/` — deploy & connections  
-- `apps-script/` — helpers & version  
+- Sign-in session token, missing-sheet repair  
+- Roles, audit, WhatsApp hooks, navy UI  
