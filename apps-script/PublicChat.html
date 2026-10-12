@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CredLock Live Chat</title>
+  <meta name="description" content="CredLock Tech Support public live chat"/>
+</head>
+<body>
+  <!-- Full PublicChat.html is maintained in the Apps Script project and Drive artifacts.
+       After cloning, run: python3 apps-script/unpack.py  OR copy from workspace KAVRO_PORTAL_V6/PublicChat.html -->
+  <p>Open the staff portal with <code>?page=chat</code> or deploy PublicChat.html as an Apps Script HTML file.</p>
+  <p>Source of truth: repository + Google Apps Script deployment (permanent /exec URL).</p>
+  <script>location.replace((window.SCRIPT_URL||'') + '?page=chat');</script>
+</body>
+</html>
