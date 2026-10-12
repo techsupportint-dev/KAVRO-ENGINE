@@ -5,38 +5,36 @@
 
 ## Live sources (Apps Script)
 
-Full production files are in Google Drive (latest from the build workspace). Paste into the Apps Script project:
+Full production files (latest build) — paste into Apps Script:
 
 | File | Drive |
 |------|-------|
-| `Code.gs` (v14.5.3) | https://drive.google.com/file/d/1FtC2sgWZnoirgm6x3IlfGx-Rszt_r3zp/view |
-| `Portal.html` (v14.5.3) | https://drive.google.com/file/d/1MEUSIeSMTmUJsufNOTypkuIOm--z4Hc0/view |
+| `Code.gs` (v14.5.3) | https://drive.google.com/file/d/1GFajWeRY8lb8-WVfPYox5Npy1GQU1Xa4/view |
+| `Portal.html` (v14.5.3) | https://drive.google.com/file/d/1ecnJuISZKNVajfjemZAH6bLPkAqE3r3s/view |
 | `PublicChat.html` | https://drive.google.com/file/d/1_yaLMpkhSEdHwcDQ6zINoXrLQo2QJPj5/view |
 
-## This repository
+## Repository layout
 
 - `README.md` — overview
 - `docs/DEPLOY.md` — deploy steps
 - `docs/CONNECTIONS.md` — keep Sheets, Drive, Gmail, WhatsApp, permanent URL connected
-- `apps-script/PublicChat.html` — public chat entry
-- `apps-script/unpack.py` — reconstruct from packed segments when present
-- `apps-script/VERSION` — `14.5.3`
+- `apps-script/` — helpers, VERSION, PublicChat entry, unpack scripts
 
-## Deploy (keep one permanent URL)
+## Deploy (permanent URL)
 
-1. Apps Script → paste Code.gs + Portal + PublicChat  
+1. Paste `Code.gs` + `Portal` + `PublicChat` into Apps Script  
 2. Run `repairMissingSheets`  
-3. **Deploy → Manage deployments → Edit → New version** (same `/exec` URL)  
-4. Brand domain `https://support.credlockng.com` → that `/exec` URL  
+3. **Manage deployments → Edit → New version** (same `/exec` URL)  
+4. Point `https://support.credlockng.com` at that `/exec` URL  
 
-## Connections to keep active
+## Keep connections active
 
 | Connection | Purpose |
 |------------|---------|
 | Google Sheets | Tickets, users, chat, audit |
 | Google Drive | Attachments & reports |
-| Gmail | Reset PIN + notifications |
-| WhatsApp Cloud API | Optional inbound/outbound |
-| GitHub | Source control (this repo) |
+| Gmail | PIN reset + notifications |
+| WhatsApp Cloud API | Optional messaging |
+| GitHub | This repo |
 
-Do **not** create a new web-app deployment for each update — always **Edit → New version**.
+Never create a new web-app deployment for each update — always **Edit → New version**.
